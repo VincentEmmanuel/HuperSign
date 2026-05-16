@@ -16,7 +16,7 @@
 
     --card: 0 0% 100%;
     --card-border: 214.3 31.8% 91.4%;
-    --card-border-tint: 112 205 159;
+    --card-border-tint: 234 88 12;
     --card-foreground: 222.2 47.4% 11.2%;
 
     --field-card: 21 90% 92%;
@@ -49,7 +49,7 @@
 
     --gold: 47.9 95.8% 53.1%;
 
-    --recipient-green: 100 48% 55%;
+    --recipient-green: 175 60% 45%;
     --recipient-blue: 212 56% 50%;
     --recipient-purple: 266 100% 64%;
     --recipient-orange: 36 92% 54%;
@@ -82,18 +82,18 @@
     --new-white-800: 0, 0%, 90%;
     --new-white-900: 0, 0%, 100%;
 
-    /* Primary - Green */
-    --new-primary-50: 98, 73%, 97%;
-    --new-primary-100: 95, 73%, 94%;
-    --new-primary-200: 94, 70%, 87%;
-    --new-primary-300: 95, 71%, 81%;
-    --new-primary-400: 95, 71%, 74%;
-    --new-primary-500: 95, 71%, 67%;
-    --new-primary-600: 95, 71%, 54%;
-    --new-primary-700: 95, 71%, 41%;
-    --new-primary-800: 95, 71%, 27%;
-    --new-primary-900: 95, 72%, 14%;
-    --new-primary-950: 95, 72%, 7%;
+    /* Primary - Orange */
+    --new-primary-50: 24, 100%, 97%;
+    --new-primary-100: 24, 100%, 91%;
+    --new-primary-200: 24, 100%, 83%;
+    --new-primary-300: 24, 100%, 74%;
+    --new-primary-400: 22, 95%, 63%;
+    --new-primary-500: 21, 90%, 55%;
+    --new-primary-600: 21, 90%, 48%;
+    --new-primary-700: 17, 88%, 40%;
+    --new-primary-800: 15, 79%, 34%;
+    --new-primary-900: 15, 75%, 28%;
+    --new-primary-950: 13, 80%, 15%;
 
     /* Secondary - Info */
     --new-info-50: 210, 54%, 95%;
@@ -153,7 +153,7 @@
 
     --card: 0 0% 14.9%;
     --card-border: 0 0% 27.9%;
-    --card-border-tint: 112 205 159;
+    --card-border-tint: 234 88 12;
     --card-foreground: 0 0% 95%;
 
     --widget: 0 0% 14.9%;

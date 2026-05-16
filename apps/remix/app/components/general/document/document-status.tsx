@@ -26,7 +26,7 @@ export const FRIENDLY_STATUS_MAP: Record<ExtendedDocumentStatus, FriendlyStatus>
     label: msg`Completed`,
     labelExtended: msg`Document completed`,
     icon: CheckCircle2,
-    color: 'text-green-500 dark:text-green-300',
+    color: 'text-orange-500 dark:text-orange-300',
   },
   DRAFT: {
     label: msg`Draft`,
