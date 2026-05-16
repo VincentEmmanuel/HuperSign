@@ -19,7 +19,7 @@ import {
   useLoaderData,
   useMatches,
 } from 'react-router';
-import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
+import { PreventFlashOnWrongTheme, Theme, ThemeProvider, useTheme } from 'remix-themes';
 
 import type { Route } from './+types/root';
 import stylesheet from './app.css?url';
@@ -66,7 +66,7 @@ export async function loader({ context, request }: Route.LoaderArgs) {
   return data(
     {
       lang,
-      theme: getTheme(),
+      theme: getTheme() ?? Theme.DARK,
       disableAnimations,
       // Surface the per-request CSP nonce produced by `securityHeadersMiddleware` so all
       // SSR-rendered <script>/<style> elements in this layout (and child
@@ -93,7 +93,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const { theme } = useLoaderData<typeof loader>() || {};
 
   return (
-    <ThemeProvider specifiedTheme={theme} themeAction="/api/theme" defaultTheme="dark">
+    <ThemeProvider specifiedTheme={theme} themeAction="/api/theme">
       <LayoutContent>{children}</LayoutContent>
     </ThemeProvider>
   );
