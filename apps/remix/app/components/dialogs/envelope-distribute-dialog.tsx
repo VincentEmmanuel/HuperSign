@@ -300,7 +300,7 @@ export const EnvelopeDistributeDialog = ({
                                             </SelectItem>
                                           ))}
 
-                                          <SelectItem value={'-1'}>Documenso</SelectItem>
+                                          <SelectItem value={'-1'}>HuperSign</SelectItem>
                                         </SelectContent>
                                       </Select>
                                     </FormControl>
