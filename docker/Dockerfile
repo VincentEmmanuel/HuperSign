@@ -102,6 +102,22 @@ ENV NEXT_PRIVATE_TELEMETRY_HOST="$NEXT_PRIVATE_TELEMETRY_HOST"
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nodejs
 
+# Generate a default self-signed PKCS#12 signing certificate so document
+# signing works out of the box. Override in production by mounting a real
+# cert at /opt/documenso/cert.p12 (set NEXT_PRIVATE_SIGNING_LOCAL_FILE_PATH
+# + NEXT_PRIVATE_SIGNING_PASSPHRASE accordingly).
+RUN mkdir -p /opt/documenso && \
+    openssl req -x509 -newkey rsa:4096 -nodes \
+      -keyout /tmp/signing-key.pem -out /tmp/signing-cert.pem \
+      -days 3650 \
+      -subj "/CN=HuperSign/O=Huper Technology/C=SG" && \
+    openssl pkcs12 -export -out /opt/documenso/cert.p12 \
+      -inkey /tmp/signing-key.pem -in /tmp/signing-cert.pem \
+      -passout pass: && \
+    rm /tmp/signing-key.pem /tmp/signing-cert.pem && \
+    chown -R nodejs:nodejs /opt/documenso && \
+    chmod 600 /opt/documenso/cert.p12
+
 USER nodejs
 
 WORKDIR /app
