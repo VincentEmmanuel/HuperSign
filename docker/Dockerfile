@@ -81,7 +81,7 @@ COPY turbo.json turbo.json
 
 RUN npm install -g "turbo@^1.9.3"
 
-RUN ulimit -n 65536 && turbo run build --filter=@documenso/remix...
+RUN turbo run build --filter=@documenso/remix...
 
 ###########################
 #     RUNNER CONTAINER    #
