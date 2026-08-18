@@ -90,6 +90,7 @@ FROM base AS runner
 
 ENV HUSKY 0
 ENV DOCKER_OUTPUT 1
+ENV NODE_ENV production
 
 # Telemetry credentials (baked into image at build time, can be disabled at runtime)
 ARG NEXT_PRIVATE_TELEMETRY_KEY=""
